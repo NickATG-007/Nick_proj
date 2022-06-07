@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .in_color {position: absolute; left: 150px;}        
+    </style>
+
+</head>
+<body>
+
+    <div> 
+        <h2>Создание меню: </h2>
+        <b>Пункты меню через запятую: </b><input id="elemMenu" type="text" size="70">
+        <br>
+        <br>
+        <b>Цвет текста: </b><input id="text_color" type="color" class="in_color" value="#000000">
+        <br>
+        <br>
+        <b>Цвет фона: </b><input id="back_color" type="color" class="in_color" value="#ffffff">
+        <br>
+        <br>
+        <b>Цвет hover: </b><input id="hover_color" type="color" class="in_color" value="#d46a12">
+        <br>
+        <br>
+        <input type="button" value="Создать меню" onclick="create_menu()">
+        <br>
+        <br>
+        <br>
+    </div>
+
+
+    <script>
+
+        function create_menu() {
+        
+            arrMenu = elemMenu.value.split(', ');
+            menu.innerHTML = "";
+
+            for (i=0; i<arrMenu.length; i++)
+            {
+                menu.innerHTML += `<a href="#" class="menu" onclick="show_pic(${i+1})">${arrMenu[i]}</a>`;
+            }
+
+
+            menu.innerHTML += `<style>
+                                .menu{border: 0px solid blueviolet; color: ${text_color.value}; background-color: ${back_color.value}; padding:5px 30px 5px 30px; text-decoration: unset; margin: 3px; size: 50px}
+
+                                a.menu:hover{
+	                            color: ${hover_color.value};
+	                            text-decoration: underline;
+	                            }
+                                </style>`
+
+            console.log(arrMenu);
+            console.log(text_color.value);
+
+        }
+
+         function show_pic(j)
+         {
+            box_pic.src = `images/${j}.jpg`;
+         }
+
+
+    </script>    
+
+    <div id="menu">        
+    </div>
+
+    <br>
+    <img src="" alt="" id="box_pic">
+
+</body>
+</html>

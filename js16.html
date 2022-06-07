@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        table, td {border: 1px solid rgb(90, 5, 5); background-color: rgb(154, 203, 243); color: darkblue;}
+    </style>
+
+</head>
+<body>
+
+    <div id="box">
+    <!-- <table>
+        <tbody>
+        <tr>
+            <td>Ячейка 1</td>
+            <td>Ячейка 2</td>
+            <td>Ячейка 3</td>
+            <td>Ячейка 4</td>
+            <td>Ячейка 5</td>
+        </tr>
+        <tr>
+            <td>Ячейка 1</td>
+            <td>Ячейка 2</td>
+            <td>Ячейка 3</td>
+            <td>Ячейка 4</td>
+            <td>Ячейка 5</td>
+        </tr>
+        <tr>
+            <td>Ячейка 1</td>
+            <td>Ячейка 2</td>
+            <td>Ячейка 3</td>
+            <td>Ячейка 4</td>
+            <td>Ячейка 5</td>
+        </tr>
+        <tr>
+            <td>Ячейка 1</td>
+            <td>Ячейка 2</td>
+            <td>Ячейка 3</td>
+            <td>Ячейка 4</td>
+            <td>Ячейка 5</td>
+        </tr>
+        <tr>
+            <td>Ячейка 1</td>
+            <td>Ячейка 2</td>
+            <td>Ячейка 3</td>
+            <td>Ячейка 4</td>
+            <td>Ячейка 5</td>
+        </tr>
+        </tbody>
+    </table> -->
+</div>
+
+
+    <script>
+
+        let n = +prompt("Введите количество столбцов",1);
+        
+        let m = +prompt("Введите количество строк",1);
+
+        let tab = "<table> <tbody>";
+
+        for (i = 1; i <= m; i++) 
+            {
+                tab += "<tr>";
+            
+            
+            for (k = 1; k <= n; k++) 
+                {
+                    tab += `<td>Ячейка ${k+(i-1)*m}</td>`;                
+                }
+            tab += "</tr>";
+            }    
+
+        tab += "</tbody></table>";    
+
+        box.innerHTML = tab;
+
+    </script>
+
+
+
+</body>
+</html>
